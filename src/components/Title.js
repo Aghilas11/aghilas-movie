@@ -2,7 +2,7 @@ import React from "react";
 
 const Title = () => {
   return (
-    <div>
+    <div className="header">
       <h1>Aghilas movies</h1>
     </div>
   );

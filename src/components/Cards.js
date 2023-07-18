@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment/moment";
 const Cards = ({ mouvie }) => {
-  const [showFullSynopsis, setShowFullSynopsis] = useState(false);
   const genreFinder = () => {
     let genreArray = [];
     for (let i = 0; i < mouvie.genre_ids.length; i++) {
@@ -68,6 +67,17 @@ const Cards = ({ mouvie }) => {
     return genreArray.map((genre) => <li key={genre}> {genre} </li>);
   };
 
+  const addStorage = () => {
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+
+    if (!storedData.includes(mouvie.id.toString())) {
+      storedData.push(mouvie.id);
+      window.localStorage.movies = storedData;
+    }
+  };
+
   return (
     <div className="card">
       <img
@@ -84,7 +94,9 @@ const Cards = ({ mouvie }) => {
       <ul>{mouvie.genre_ids ? genreFinder() : null}</ul>
       {mouvie.overview ? <h3>Synopsis</h3> : ""}
       <p> {mouvie.overview} </p>
-      <button className="btn">Ajouter aux coup de coeur</button>
+      <button className="btn" onClick={() => addStorage()}>
+        Ajouter aux coup de coeur
+      </button>
     </div>
   );
 };

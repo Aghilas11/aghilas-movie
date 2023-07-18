@@ -30,13 +30,13 @@ const Movies = () => {
           <input
             type="submit"
             id="goodToBad"
-            value="Top"
+            value="Top ⬆️"
             onClick={() => setSortGoodBad("goodToBad")}
           />
           <input
             type="submit"
             id="badToGood"
-            value="Flop"
+            value="Flop ⬇️"
             onClick={() => setSortGoodBad("badToGood")}
           />
         </div>
