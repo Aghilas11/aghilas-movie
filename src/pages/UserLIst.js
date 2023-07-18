@@ -1,11 +1,12 @@
 import React from "react";
 import Navigation from "../components/Navigation";
+import Title from "../components/Title";
 
 const UserLIst = () => {
   return (
     <div>
-      <h1>Coup de coueur</h1>
       <Navigation />
+      <Title />
     </div>
   );
 };

@@ -1,1 +1,18 @@
-.home-page {}
+.home-page {
+
+
+    ul {
+        display: flex;
+
+        li {
+            color: $white;
+            text-align: center;
+            font-size: 1.2em;
+            width: 100px;
+            margin: 20px;
+            padding: 10px;
+            background-color: $color-1;
+            border-radius: 15px;
+        }
+    }
+}
